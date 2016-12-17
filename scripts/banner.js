@@ -11,8 +11,10 @@ function banner(){
 		imgTop = img.offset().top,
 		imgWidth = img.width(),
 		imgHeight = img.height(),
-		oldPageX = imgLeft + imgWidth/2,
-		oldPageY = imgTop + imgHeight/2,
+		/*oldPageX = imgLeft + imgWidth/2,
+		oldPageY = imgTop + imgHeight/2,*/
+		oldPageX = banner.width()/2,
+		oldPageY = banner.height()/2,
 		bathRandom = Math.random()*10;
 	bg.on('mousemove',function(e){
 		var _eventMove = window.event || e,
