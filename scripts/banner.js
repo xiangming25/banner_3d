@@ -22,7 +22,6 @@ function banner(){
 			newPageY = _eventMove.pageY,
 			reduceX = -bathRandom+(newPageX - oldPageX)/50,
 			reduceY = -10+(newPageY - oldPageY)/50;
-		console.log(reduceX+"    "+reduceY);
 		banner.css('transform','rotateX('+reduceX+'deg) rotateY('+reduceY+'deg)');
 	});
 }
