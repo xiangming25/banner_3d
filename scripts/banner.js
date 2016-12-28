@@ -6,16 +6,15 @@ var timer = 0;
 function banner(){
 	var bg = $('.bg'),
 		banner = $('.banner'),
-		img = $('.img'),
+		img = $('.img').eq(0),
 		imgLeft = img.offset().left,
 		imgTop = img.offset().top,
 		imgWidth = img.width(),
 		imgHeight = img.height(),
-		oldPageX = banner.width()/2 + imgLeft,
-		oldPageY = banner.height()/2+imgTop,
+		oldPageX = imgLeft/2 + imgLeft,
+		oldPageY = imgTop/2+imgTop,
 		flag = false,
 	    	_e = '';
-	
 	bg.on('mousemove',function(e){
 		flag = true;
 		_e = e;
