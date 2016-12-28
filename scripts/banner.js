@@ -2,7 +2,7 @@ window.onload = function(){
 	banner();
 }
 
-
+var timer = 0;
 function banner(){
 	var bg = $('.bg'),
 		banner = $('.banner'),
@@ -11,18 +11,30 @@ function banner(){
 		imgTop = img.offset().top,
 		imgWidth = img.width(),
 		imgHeight = img.height(),
-		/*oldPageX = imgLeft + imgWidth/2,
-		oldPageY = imgTop + imgHeight/2,*/
-		oldPageX = banner.width()/2,
-		oldPageY = banner.height()/2,
-		bathRandom = Math.random()*10;
+		oldPageX = banner.width()/2 + imgLeft,
+		oldPageY = banner.height()/2+imgTop,
+		flag = false,
+	    	_e = '';
+	
 	bg.on('mousemove',function(e){
-		var _eventMove = window.event || e,
-			newPageX = _eventMove.pageX,
-			newPageY = _eventMove.pageY,
-			reduceX = -bathRandom+(newPageX - oldPageX)/50,
-			reduceY = -10+(newPageY - oldPageY)/20;
-		// console.log(reduceX+"    "+reduceY);
-		banner.css('transform','rotateX('+reduceX+'deg) rotateY('+reduceY+'deg)');
+		flag = true;
+		_e = e;
 	});
+	
+	clearInterval(timer);
+	timer = setInterval(move,150);
+	
+	function move(){
+		if(flag){
+			var _eventMove = window.event || e,
+			    newPageX = _eventMove.pageX,
+			    newPageY = _eventMove.pageY,
+			    reduceX = (oldPageX - newPageX),
+			    reduceY = (oldPageY - newPageY),
+			    rotateX = reduceX > 0 ? Math.log(reduceX-1)*2 : -Math.log(-reduceX-1)*2,
+			    rotateY = reduceY > 0 ? Math.log(reduceY-1)*0.8 : -Math.log(-reduceY-1)*0.8;
+			banner.css('transform','rotateX('+(-rotateY)+'deg) rotateY('+(rotateX)+'deg)');
+			flag = false;
+		}
+	}
 }
