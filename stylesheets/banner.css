@@ -25,16 +25,16 @@ html,body{
 }
 .banner .img1{
 	top: 80px;
-	right: 190px;
-	transform: translateZ(50px);
+	right: 335px;
+	transform: translateZ(150px);
 }
 .banner .img2{
 	top: 100px;
 	right: 285px;
-	transform: translateZ(100px);
+	transform: translateZ(50px);
 }
 .banner .img3{
-	top: 200px;
-	right: 190px;
-	transform: translateZ(150px);
+	top: 106px;
+	right: 345px;
+	transform: translateZ(100px);
 }
