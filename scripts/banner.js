@@ -26,7 +26,7 @@ function banner(){
 	
 	function move(){
 		if(flag){
-			var _eventMove = window.event || e,
+			var _eventMove = window.event || _e,
 			    newPageX = _eventMove.pageX,
 			    newPageY = _eventMove.pageY,
 			    reduceX = (oldPageX - newPageX),
